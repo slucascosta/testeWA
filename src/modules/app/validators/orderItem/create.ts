@@ -1,9 +1,15 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsString, IsNotEmpty, MaxLength, Min } from 'class-validator';
+import { IsString, IsNotEmpty, MaxLength, Min, IsInt } from 'class-validator';
 
 import { IOrderItem } from 'modules/database/interfaces/orderItem';
 
 export class CreateValidator implements IOrderItem {
+  @IsNotEmpty()
+  @IsInt()
+  @Min(1)
+  @ApiProperty({ required: true, type: 'integer' })
+  public orderId: number;
+
   @IsNotEmpty()
   @IsString()
   @MaxLength(128)

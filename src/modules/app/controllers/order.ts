@@ -21,9 +21,7 @@ export class OrderController {
   @Post()
   @ApiResponse({ status: 200, type: Order })
   public async create() {
-    let order: IOrder = {
-      createdDate: new Date()
-    };
+    let order: IOrder = {};
 
     return this.orderRepository.insert(order);
   }

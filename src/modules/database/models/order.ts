@@ -8,8 +8,11 @@ export class Order extends Model implements IOrder {
   @ApiProperty({ type: 'integer' })
   public id?: number;
 
-  @ApiProperty({ type: 'date' })
-  public createdDate?: Date;
+  @ApiProperty({ type: 'date-time' })
+  public createdDate: Date;
+
+  @ApiProperty({ type: 'integer' })
+  public total: number;
 
   @ApiProperty({ nullable: true })
   public items?: OrderItem[];
