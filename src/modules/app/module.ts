@@ -9,9 +9,14 @@ import { UserRepository } from './repositories/user';
 import { AuthService } from './services/auth';
 import { UserService } from './services/user';
 
+import { OrderRepository } from './repositories/order';
+import { OrderController } from './controllers/order';
+import { OrderItemController } from './controllers/orderItem';
+import { OrderItemRepository } from './repositories/orderItem';
+
 @Module({
   imports: [HttpModule, CommonModule, DatabaseModule],
-  controllers: [AuthController, ProfileController],
-  providers: [AuthService, UserService, UserRepository, DeviceRepository]
+  controllers: [AuthController, ProfileController, OrderController, OrderItemController],
+  providers: [AuthService, UserService, UserRepository, DeviceRepository, OrderRepository, OrderItemRepository]
 })
 export class AppModule {}
