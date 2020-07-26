@@ -1,14 +1,12 @@
 import { ApiTags, ApiResponse } from '@nestjs/swagger';
 import { Controller, Param, Get, Post, Body } from '@nestjs/common';
 
-import { AuthRequired } from 'modules/common/guards/token';
 import { OrderItemRepository } from '../repositories/orderItem';
 import { OrderItem } from 'modules/database/models/orderItem';
 import { CreateValidator } from '../validators/orderItem/create';
 
 @ApiTags('App: Order Item')
 @Controller('/order/:orderId/item')
-@AuthRequired()
 export class OrderItemController {
   constructor(private orderItemRepository: OrderItemRepository) {}
 
@@ -26,7 +24,9 @@ export class OrderItemController {
 
   @Post()
   @ApiResponse({ status: 200, type: OrderItem })
-  public async create(@Body() model: CreateValidator) {
+  public async create(@Body() model: CreateValidator, @Param('orderId') orderId: number) {
+    model.orderId = orderId;
+
     return this.orderItemRepository.insert(model);
   }
 }

@@ -5,8 +5,8 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "waproject-repository",
-    "seed": "git@bitbucket.org:waproject/waproject-base-api.git"
+    "url": "testeWA",
+    "seed": "git@github.com:slucascosta/testeWA.git"
   },
   "scripts": {
     "dev": "yarn ts-node-dev --inspect=0.0.0.0:9229 --respawn --no-notify --transpileOnly --no-deps --project tsconfig.dev.json ./src/index.ts",
@@ -94,13 +94,10 @@
     "eslint-config-prettier": "6.7.0",
     "eslint-plugin-prettier": "3.1.2",
     "husky": "3.1.0",
-    "inquirer": "7.0.1",
     "jest": "24.9.0",
     "jest-extended": "0.11.2",
     "npm-check-updates": "4.0.1",
-    "ora": "4.0.3",
     "prettier": "1.19.1",
-    "rimraf": "3.0.0",
     "supertest": "4.0.2",
     "ts-jest": "24.2.0",
     "ts-node": "8.5.4",

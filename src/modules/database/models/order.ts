@@ -14,6 +14,9 @@ export class Order extends Model implements IOrder {
   @ApiProperty({ type: 'integer' })
   public total: number;
 
+  @ApiProperty({ type: 'string' })
+  public description: string;
+
   @ApiProperty({ nullable: true })
   public items?: OrderItem[];
 
