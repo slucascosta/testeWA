@@ -13,7 +13,7 @@ export class OrderItem extends Model implements IOrderItem {
   @ApiProperty({ type: 'integer' })
   public quantity?: number;
 
-  @ApiProperty({ type: 'float' })
+  @ApiProperty({ type: 'string', format: 'float' })
   public price?: number;
 
   public order: Order;
@@ -27,7 +27,7 @@ export class OrderItem extends Model implements IOrderItem {
       order: {
         relation: Model.HasOneRelation,
         modelClass: Order,
-        filter: (query: any) => query.select('id', 'createdDate'),
+        filter: (query: any) => query.select('id', 'createdDate', 'description', 'total'),
         join: {
           from: 'Order.id',
           to: 'OrderItem.orderId'

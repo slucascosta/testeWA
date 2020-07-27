@@ -3,7 +3,7 @@ import { IsString, IsNotEmpty, MaxLength, Min, IsOptional } from 'class-validato
 
 import { IOrderItem } from 'modules/database/interfaces/orderItem';
 
-export class CreateValidator implements IOrderItem {
+export class OrderItemCreateValidator implements IOrderItem {
   @IsOptional()
   @ApiProperty({ required: false, type: 'integer' })
   public orderId: number;

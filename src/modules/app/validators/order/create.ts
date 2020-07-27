@@ -3,7 +3,7 @@ import { IsString, IsNotEmpty, MaxLength } from 'class-validator';
 
 import { IOrder } from 'modules/database/interfaces/order';
 
-export class CreateValidator implements IOrder {
+export class OrderCreateValidator implements IOrder {
   @IsNotEmpty()
   @IsString()
   @MaxLength(64)
