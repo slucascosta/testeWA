@@ -62,7 +62,7 @@
     "objection": "2.0.7",
     "password-generator": "2.2.3",
     "pg": "7.14.0",
-    "pug": "2.0.4",
+    "pug": "3.0.1",
     "reflect-metadata": "0.1.13",
     "rxjs": "6.5.3",
     "source-map-support": "0.5.16",
